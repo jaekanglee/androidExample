@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">파비썸</string>
+    <string name="fab_description">FAB button description</string>
+</resources>
