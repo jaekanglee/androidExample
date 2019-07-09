@@ -13,7 +13,6 @@ import android.os.IBinder;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
-
 public class StepService extends Service implements SensorEventListener {
 
     private MyBinder mMyBinder = new MyBinder();
@@ -116,3 +115,4 @@ public class StepService extends Service implements SensorEventListener {
 
     }
 }
+
