@@ -16,7 +16,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private StepService stepService;
-    private int stepCount = 0;
     boolean isService = false; // 서비스 중인 확인용
 
     private TextView textCount, statusService;
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             stepService = mb.getService(); //
             stepService.setCallback(stepCallback);
             isService = true;
-
             statusService.setText("연결됨");
         }
 
@@ -61,25 +59,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         stepService = new StepService();
         startBtn = findViewById(R.id.startBtn);
         endBtn = findViewById(R.id.endBtn);
         textCount = findViewById(R.id.textCount);
-
         statusService = findViewById(R.id.textStatusService);
-
-
         setListener();
 
     }
-
-
     public void setListener() {
-
         startBtn.setOnClickListener(this);
         endBtn.setOnClickListener(this);
-
     }
 
     @Override
@@ -100,10 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
-
     }
-
-
     @Override
     protected void onStop() {
         super.onStop();
